@@ -76,8 +76,19 @@ s32 envfx_init_snow(s32 mode) {
             break;
 
         case ENVFX_SNOW_BLIZZARD:
-            gSnowParticleMaxCount = 140;
-            gSnowParticleCount = 140;
+            gSnowParticleMaxCount = 150;
+            gSnowParticleCount = 150;
+            
+            /** 
+             * Change the size of raindrops to make them bigger. 
+             * Quick fix until I make a better implimentation.
+             */
+            gSnowFlakeVertex1.x = -10;
+            gSnowFlakeVertex1.y = 10;
+            gSnowFlakeVertex2.x = -10;
+            gSnowFlakeVertex2.y = -10;
+            gSnowFlakeVertex3.x = 10;
+            gSnowFlakeVertex3.y = 10;
             break;
     }
 

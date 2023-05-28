@@ -56,7 +56,7 @@ const LevelScript level_bob_entry[] = {
 		TERRAIN(bob_area_1_collision),
 		MACRO_OBJECTS(bob_area_1_macro_objs),
 		STOP_MUSIC(0),
-		TERRAIN_TYPE(TERRAIN_SNOW),
+		TERRAIN_TYPE(TERRAIN_GRASS),
 		/* Fast64 begin persistent block [area commands] */
 		/* Fast64 end persistent block [area commands] */
 	END_AREA(),
