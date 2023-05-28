@@ -54,6 +54,7 @@ struct SnowFlakeVertex gSnowFlakeVertex3 = { 5, 5, 0 };
 extern void *tiny_bubble_dl_0B006AB0;
 extern void *tiny_bubble_dl_0B006A50;
 extern void *tiny_bubble_dl_0B006CD8;
+extern void *rain_drop;
 
 /**
  * Initialize snow particles by allocating a buffer for storing their state
@@ -438,10 +439,12 @@ Gfx *envfx_update_snow(s32 snowMode, Vec3s marioPos, Vec3s camFrom, Vec3s camTo)
 
     rotate_triangle_vertices((s16 *) &vertex1, (s16 *) &vertex2, (s16 *) &vertex3, pitch, yaw);
 
-    if (snowMode == ENVFX_SNOW_NORMAL || snowMode == ENVFX_SNOW_BLIZZARD) {
+    if (snowMode == ENVFX_SNOW_NORMAL) {
         gSPDisplayList(gfx++, &tiny_bubble_dl_0B006A50); // snowflake with gray edge
     } else if (snowMode == ENVFX_SNOW_WATER) {
         gSPDisplayList(gfx++, &tiny_bubble_dl_0B006CD8); // snowflake with blue edge
+    } else if (snowMode == ENVFX_SNOW_BLIZZARD) {
+        gSPDisplayList(gfx++, &rain_drop);
     }
 
     for (i = 0; i < gSnowParticleCount; i += 5) {
